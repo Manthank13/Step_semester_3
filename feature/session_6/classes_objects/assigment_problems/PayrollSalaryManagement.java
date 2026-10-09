@@ -1,0 +1,3 @@
+package classes_objects.assigment_problems;
+
+public class PayrollSalaryManagement {static class PayrollAccount{private double basicSalary,bonus;PayrollAccount(double s){if(s<0){System.out.println("Warning: negative salary; set to 0");s=0;}basicSalary=s;}void creditBonus(double a){if(a<=0)System.out.println("Bonus must be positive");else{bonus+=a;System.out.println("Bonus credited: Rs "+a);}}void deductTax(double p){if(p<0||p>100)System.out.println("Invalid tax percentage");else{basicSalary*=1-p/100;System.out.println("Tax deducted: "+p+"%");}}double getNetSalary(){return basicSalary+bonus;}}public static void main(String[] x){PayrollAccount p=new PayrollAccount(50000);p.creditBonus(5000);p.deductTax(10);System.out.println("Net salary: Rs "+p.getNetSalary());}}
