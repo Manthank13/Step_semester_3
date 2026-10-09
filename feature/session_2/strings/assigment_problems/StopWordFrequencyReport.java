@@ -1,0 +1,3 @@
+package strings.assigment_problems;
+
+import java.util.*; public class StopWordFrequencyReport { static void report(String text){String clean=text.toLowerCase().replaceAll("[.,!?;:]", " ").trim();String[] stop={"the","was","and","a","is","of","in"};Map<String,Integer> map=new LinkedHashMap<>();if(!clean.isEmpty())for(String w:clean.split("\\s+")){boolean skip=false;for(String s:stop)if(w.equals(s))skip=true;if(!skip)map.put(w,map.getOrDefault(w,0)+1);}for(String w:map.keySet())System.out.println(w+": "+map.get(w));} public static void main(String[] x){report("The coding club was fun and coding is useful.");}}
