@@ -1,0 +1,3 @@
+package polymorphism.assigment_problems;
+
+import java.util.*;public class CampusParkingChargeCalculator {interface Vehicle{double charge(int h);}static class Bike implements Vehicle{public double charge(int h){return h*10;}}static class Car implements Vehicle{public double charge(int h){return 30+Math.max(0,h-1)*20;}}static class Truck implements Vehicle{public double charge(int h){return Math.max(100,h*50);}}public static void main(String[] z){Scanner s=new Scanner(System.in);int n=s.nextInt();double total=0;for(int i=0;i<n;i++){String t=s.next();int h=s.nextInt();Vehicle v=t.equals("BIKE")?new Bike():t.equals("CAR")?new Car():new Truck();double c=v.charge(h);System.out.printf(Locale.US,"%s: %.2f%n",t,c);total+=c;}System.out.printf(Locale.US,"Total: %.2f%n",total);}}
