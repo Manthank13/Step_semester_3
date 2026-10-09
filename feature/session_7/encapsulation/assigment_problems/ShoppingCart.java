@@ -1,0 +1,3 @@
+package encapsulation.assigment_problems;
+
+public class ShoppingCart {private final String cartId;private final double[] prices;private int count;public ShoppingCart(String id,int capacity){cartId=id;prices=new double[Math.max(0,capacity)];}public boolean addItem(double p){if(p<0||count==prices.length)return false;prices[count++]=p;return true;}public double getTotal(){double sum=0;for(int i=0;i<count;i++)sum+=prices[i];return sum;}public int getItemCount(){return count;}public String getCartId(){return cartId;}public static void main(String[] x){ShoppingCart c=new ShoppingCart("C-1",10);c.addItem(250);c.addItem(99);c.addItem(151);System.out.println(c.getTotal()+" | "+c.getItemCount());}}
